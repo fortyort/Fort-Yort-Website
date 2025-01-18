@@ -19,7 +19,7 @@
             padding: 20px;
         }
 
-        /* Container for each black box */
+        /* Style for button boxes */
         .box {
             background-color: black;
             color: white;
@@ -28,30 +28,32 @@
             margin-bottom: 20px; /* Space between boxes */
             text-align: center;
             position: relative;
+            border: none; /* Remove button borders */
+            cursor: pointer; /* Add pointer cursor on hover */
+            font-size: 2rem; /* Increased font size for text */
         }
 
-        /* Style for text */
-        .box p {
-            font-size: 2.5rem;
+        .box:hover {
+            background-color: #333; /* Slightly lighter black on hover */
         }
     </style>
 </head>
 <body>
 
     <!-- HOME -->
-    <div class="box">
-        <p>fort yort</p>
-    </div>
+    <button class="box">
+        fort yort
+    </button>
 
     <!-- MUSIC -->
-    <div class="box">
-        <p>music</p>
-    </div>
+    <button class="box">
+        music
+    </button>
 
     <!-- CARTOONS -->
-    <div class="box">
-        <p>cartoons</p>
-    </div>
+    <button class="box">
+        cartoons
+    </button>
 
 </body>
 </html>
