@@ -43,31 +43,25 @@
             font-size: 1.5rem; /* Smaller font size */
         }
 
-        /* Specific colors for "music" and "cartoons" boxes */
-        /* Ensure both button and anchor tag styles are the same */
-        .box:nth-of-type(2) {
+        /* "Music" box specific styles (anchor tag) */
+        .music-box {
             background-color: #444444; /* Gray for music box */
             font-size: 2rem; /* Corrected font size */
             padding: 50px 20px; /* Ensure same height as other boxes */
         }
 
+        /* "Cartoons" box specific styles (button) */
         .box:nth-of-type(3) {
             background-color: #999999; /* Corrected light gray for cartoons box */
         }
 
+        /* Hover effect for both buttons and anchor tags */
         .box:hover {
             background-color: #000000; /* Black on hover */
         }
 
         .box:focus {
             outline: none; /* Remove focus outline */
-        }
-
-        /* Additional styles for <a> tag to match buttons exactly */
-        .box.music-box {
-            background-color: #444444; /* Gray for music box */
-            font-size: 2rem; /* Corrected font size */
-            padding: 50px 20px; /* Ensure same height as other boxes */
         }
     </style>
 </head>
