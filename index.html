@@ -32,7 +32,8 @@
             border: none; /* Remove button borders */
             cursor: pointer; /* Add pointer cursor on hover */
             font-size: 2rem; /* Increased font size for text */
-            appearance: none; /* Remove browser default button styles */
+            text-decoration: none; /* Remove underline for links */
+            display: block; /* Ensure it spans the full width of the container */
         }
 
         /* Top box specific height and smaller font */
@@ -67,11 +68,9 @@
     </button>
 
     <!-- MUSIC -->
-    <button class="box">
-  <a href="https://fortyort.bandcamp.com/" target="_blank" class="box">
-    music
-</a>
-    </button>
+    <a href="https://fortyort.bandcamp.com/" target="_blank" class="box">
+        music
+    </a>
 
     <!-- CARTOONS -->
     <button class="box">
