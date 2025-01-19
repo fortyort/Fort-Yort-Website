@@ -22,7 +22,7 @@
 
         /* Style for button boxes */
         .box {
-            background-color: black;
+            background-color: black; /* Default background color */
             color: white;
             width: 100%; /* Full width */
             padding: 50px 20px;
@@ -37,8 +37,17 @@
 
         /* Top box specific height and smaller font */
         .box:first-of-type {
-            padding: 5px 20px; /* Half the height of the other boxes */
+            padding: 25px 20px; /* Half the height of the other boxes */
             font-size: 1.5rem; /* Smaller font size */
+        }
+
+        /* Specific colors for "music" and "cartoons" boxes */
+        .box:nth-of-type(2) {
+            background-color: #444444; /* Gray for music box */
+        }
+
+        .box:nth-of-type(3) {
+            background-color: #9b9b93; /* Light gray for cartoons box */
         }
 
         .box:hover {
