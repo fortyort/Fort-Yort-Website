@@ -74,22 +74,28 @@
             width: 100px; /* Fixed width */
             aspect-ratio: 1 / 1; /* Enforces square proportions */
             background-color: black;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            -webkit-tap-highlight-color: transparent; /* Prevents grey flash on tap */
         }
 
         .square-box:hover {
             background-color: #333; /* Slight color change on hover */
         }
 
-        /* Specific Style for YouTube Link */
+        /* YouTube Box */
         .youtube-box {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: black; /* YouTube brand color */
-            font-size: 28px;
-            color: white;
-            font-weight: bold;
-            text-decoration: none;
+            background-color: red; /* YouTube brand color */
+        }
+
+        /* Instagram Box */
+        .instagram-box {
+            background-color: #E4405F; /* Instagram brand color */
         }
     </style>
 </head>
@@ -112,10 +118,12 @@
     <!-- Black Square Boxes -->
     <div class="squares-container">
         <a href="https://youtube.com/@fortyort" target="_blank" class="square-box youtube-box" aria-label="YouTube">
-            Y
+            YouTube
         </a>
         <div class="square-box"></div>
-        <div class="square-box"></div>
+        <a href="http://www.instagram.com/fortyort" target="_blank" class="square-box instagram-box" aria-label="Instagram">
+            Instagram
+        </a>
         <div class="square-box"></div>
     </div>
 </body>
