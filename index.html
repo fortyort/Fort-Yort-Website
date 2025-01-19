@@ -20,73 +20,63 @@
             padding: 20px 20px 40px;
         }
 
-        /* Home Box */
-        .home-box {
+        /* Box Base Style */
+        .box {
             display: block;
             width: 100%;
-            padding: 15px 20px; /* Custom padding for Home box */
+            padding: 50px 20px;
             margin-bottom: 15px;
             text-align: center;
-            font-size: 1.5rem; /* Smaller font size for Home */
-            background-color: black;
+            font-size: 2rem;
             color: white;
             border: none;
             cursor: pointer;
             text-decoration: none;
             appearance: none;
+        }
+
+        /* Home Box */
+        .home-box {
+            background-color: black;
+            font-size: 1.5rem; /* Smaller font size for Home */
+            padding: 15px 20px; /* Custom padding for Home box */
         }
 
         /* Music Box */
         .music-box {
-            display: block;
-            width: 100%;
-            padding: 50px 20px; /* Adjusted padding for Music box */
-            margin-bottom: 15px;
-            text-align: center;
-            font-size: 2.5rem; /* Increased font size for Music box */
-            background-color: #444; /* Specific background color for Music box */
-            color: white;
-            border: none;
-            cursor: pointer;
-            text-decoration: none;
-            appearance: none;
+            background-color: #444; /* Music box color */
+            font-size: 2.5rem; /* Increased font size */
         }
 
         /* Cartoons Box */
         .cartoons-box {
-            display: block;
-            width: 100%;
-            padding: 50px 20px; /* Custom padding for Cartoons box */
-            margin-bottom: 15px;
-            text-align: center;
-            font-size: 2rem;
-            background-color: #999; /* Specific background color for Cartoons box */
-            color: white;
-            border: none;
-            cursor: pointer;
-            text-decoration: none;
-            appearance: none;
+            background-color: #999; /* Cartoons box color */
         }
 
         /* Hover & Focus Effects */
-        .home-box:hover,
-        .music-box:hover,
-        .cartoons-box:hover {
+        .box:hover {
             background-color: #000;
         }
 
-        .home-box:focus,
-        .music-box:focus,
-        .cartoons-box:focus {
+        .box:focus {
             outline: none;
         }
     </style>
 </head>
 <body>
-    <!-- HOME -->
-    <a href="https://fortyort.github.io/my-website/" class="home-box" aria-label="Home">
+    <!-- HOME (Link to the website) -->
+    <a href="https://fortyort.github.io/my-website/" class="box home-box" aria-label="Home">
         fort yort
     </a>
 
     <!-- MUSIC -->
-    <a href="https://fortyort.bandcamp.com/" target="_blank" class="music-box" ari
+    <a href="https://fortyort.bandcamp.com/" target="_blank" class="box music-box" aria-label="Music">
+        music
+    </a>
+
+    <!-- CARTOONS -->
+    <button class="box cartoons-box" aria-label="Cartoons">
+        cartoons
+    </button>
+</body>
+</html>
