@@ -20,14 +20,14 @@
             padding: 20px 20px 40px;
         }
 
-        /* Button Styles */
-        .box {
+        /* Home Box */
+        .home-box {
             display: block;
             width: 100%;
-            padding: 50px 20px;
+            padding: 15px 20px; /* Custom padding for Home box */
             margin-bottom: 15px;
             text-align: center;
-            font-size: 2rem;
+            font-size: 1.5rem; /* Smaller font size for Home */
             background-color: black;
             color: white;
             border: none;
@@ -36,43 +36,65 @@
             appearance: none;
         }
 
-        .box:first-of-type {
-            padding: 15px 20px;
-            font-size: 1.5rem;
-        }
-
+        /* Music Box */
         .music-box {
-            background-color: #444;
-            padding: 50px 20px; /* Adjusted padding for the Music button */
+            display: block;
+            width: 100%;
+            padding: 50px 20px; /* Adjusted padding for Music box */
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 2rem;
+            background-color: #444; /* Specific background color for Music box */
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            appearance: none;
         }
 
-        .box:nth-of-type(3) {
-            background-color: #999;
+        /* Cartoons Box */
+        .cartoons-box {
+            display: block;
+            width: 100%;
+            padding: 50px 20px; /* Custom padding for Cartoons box */
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 2rem;
+            background-color: #999; /* Specific background color for Cartoons box */
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            appearance: none;
         }
 
         /* Hover & Focus Effects */
-        .box:hover {
+        .home-box:hover,
+        .music-box:hover,
+        .cartoons-box:hover {
             background-color: #000;
         }
 
-        .box:focus {
+        .home-box:focus,
+        .music-box:focus,
+        .cartoons-box:focus {
             outline: none;
         }
     </style>
 </head>
 <body>
     <!-- HOME -->
-    <button class="box" aria-label="Home">
+    <button class="home-box" aria-label="Home">
         fort yort
     </button>
 
     <!-- MUSIC -->
-    <a href="https://fortyort.bandcamp.com/" target="_blank" class="box music-box" aria-label="Music">
+    <a href="https://fortyort.bandcamp.com/" target="_blank" class="music-box" aria-label="Music">
         music
     </a>
 
     <!-- CARTOONS -->
-    <button class="box" aria-label="Cartoons">
+    <button class="cartoons-box" aria-label="Cartoons">
         cartoons
     </button>
 </body>
