@@ -32,10 +32,20 @@
             border: none; /* Remove button borders */
             cursor: pointer; /* Add pointer cursor on hover */
             font-size: 2rem; /* Increased font size for text */
+            appearance: none; /* Remove browser default button styles */
+        }
+
+        /* Top box specific height */
+        .box:first-of-type {
+            padding: 25px 20px; /* Half the height of the other boxes */
         }
 
         .box:hover {
             background-color: #333; /* Slightly lighter black on hover */
+        }
+
+        .box:focus {
+            outline: none; /* Remove focus outline */
         }
     </style>
 </head>
