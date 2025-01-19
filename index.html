@@ -61,6 +61,20 @@
         .box:focus {
             outline: none;
         }
+
+        /* New Boxes Container */
+        .squares-container {
+            display: flex;
+            justify-content: center; /* Center the squares horizontally */
+            gap: 20px; /* Space between boxes */
+            margin-top: 20px;
+        }
+
+        .square-box {
+            width: 100px; /* Square size */
+            height: 100px;
+            background-color: black;
+        }
     </style>
 </head>
 <body>
@@ -78,5 +92,13 @@
     <a href="cartoons.html" class="box cartoons-box" aria-label="Cartoons">
         cartoons
     </a>
+
+    <!-- Black Square Boxes -->
+    <div class="squares-container">
+        <div class="square-box"></div>
+        <div class="square-box"></div>
+        <div class="square-box"></div>
+        <div class="square-box"></div>
+    </div>
 </body>
 </html>
