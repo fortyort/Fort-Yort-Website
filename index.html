@@ -66,14 +66,30 @@
         .squares-container {
             display: flex;
             justify-content: center; /* Center the squares horizontally */
-            gap: 15px; /* Space between boxes */
-            margin-top: 15px;
+            gap: 20px; /* Space between boxes */
+            margin-top: 20px;
         }
 
         .square-box {
             width: 100px; /* Fixed width */
             aspect-ratio: 1 / 1; /* Enforces square proportions */
             background-color: black;
+        }
+
+        .square-box:hover {
+            background-color: #333; /* Slight color change on hover */
+        }
+
+        /* Specific Style for YouTube Link */
+        .youtube-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: red; /* YouTube brand color */
+            font-size: 14px;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
         }
     </style>
 </head>
@@ -95,7 +111,9 @@
 
     <!-- Black Square Boxes -->
     <div class="squares-container">
-        <div class="square-box"></div>
+        <a href="https://youtube.com/@fortyort" target="_blank" class="square-box youtube-box" aria-label="YouTube">
+            YouTube
+        </a>
         <div class="square-box"></div>
         <div class="square-box"></div>
         <div class="square-box"></div>
