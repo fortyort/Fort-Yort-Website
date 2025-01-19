@@ -11,76 +11,69 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: inherit; /* Ensure all elements inherit font-family */
+            font-family: inherit;
         }
 
         body {
-            font-family: 'Times New Roman', Georgia, serif; /* Times New Roman as default */
+            font-family: 'Times New Roman', Georgia, serif;
             background-color: #f4f4f4;
-            padding: 20px 20px 40px 20px; /* Maintain top and bottom padding */
+            padding: 20px 20px 40px;
         }
 
-        /* Style for button boxes */
+        /* Button Styles */
         .box {
-            background-color: black; /* Default background color */
-            color: white;
-            width: 100%; /* Full width */
+            display: block;
+            width: 100%;
             padding: 50px 20px;
-            margin-bottom: 15px; /* Reduced space between boxes */
+            margin-bottom: 15px;
             text-align: center;
-            position: relative;
-            border: none; /* Remove button borders */
-            cursor: pointer; /* Add pointer cursor on hover */
-            font-size: 2rem; /* Increased font size for text */
-            appearance: none; /* Remove browser default button styles */
-            display: block; /* Ensure it spans the full width of the container */
-            text-decoration: none; /* Remove underline */
+            font-size: 2rem;
+            background-color: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            appearance: none;
+            text-align: center;
         }
 
-        /* Top box specific height and smaller font */
         .box:first-of-type {
-            padding: 15px 20px; /* Half the height of the other boxes */
-            font-size: 1.5rem; /* Smaller font size */
+            padding: 15px 20px;
+            font-size: 1.5rem;
         }
 
-        /* "Music" box specific styles (anchor tag) */
         .music-box {
-            background-color: #444444; /* Gray for music box */
-            font-size: 2rem; /* Corrected font size */
-            padding: 50px 20px; /* Ensure same height as other boxes */
+            background-color: #444;
         }
 
-        /* "Cartoons" box specific styles (button) */
         .box:nth-of-type(3) {
-            background-color: #999999; /* Corrected light gray for cartoons box */
+            background-color: #999;
         }
 
-        /* Hover effect for both buttons and anchor tags */
+        /* Hover & Focus Effects */
         .box:hover {
-            background-color: #000000; /* Black on hover */
+            background-color: #000;
         }
 
         .box:focus {
-            outline: none; /* Remove focus outline */
+            outline: none;
         }
     </style>
 </head>
 <body>
-
     <!-- HOME -->
-    <button class="box">
+    <button class="box" aria-label="Home">
         fort yort
     </button>
 
     <!-- MUSIC -->
-    <a href="https://fortyort.bandcamp.com/" target="_blank" class="box music-box">
+    <a href="https://fortyort.bandcamp.com/" target="_blank" class="box music-box" aria-label="Music">
         music
     </a>
 
     <!-- CARTOONS -->
-    <button class="box">
+    <button class="box" aria-label="Cartoons">
         cartoons
     </button>
-
 </body>
 </html>
