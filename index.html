@@ -44,8 +44,9 @@
         }
 
         /* Specific colors for "music" and "cartoons" boxes */
-        .box:nth-of-type(2) {
-            background-color: #444444; /* Corrected gray for music box */
+        .box:nth-of-type(2),
+        .box.music-box {
+            background-color: #444444; /* Gray for music box */
             font-size: 2rem; /* Corrected font size */
         }
 
@@ -70,7 +71,7 @@
     </button>
 
     <!-- MUSIC -->
-    <a href="https://fortyort.bandcamp.com/" target="_blank" class="box">
+    <a href="https://fortyort.bandcamp.com/" target="_blank" class="box music-box">
         music
     </a>
 
