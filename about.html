@@ -71,9 +71,9 @@
         /* Rectangle Style */
         .rectangle {
             position: relative; /* Relative to itself for text alignment */
-            width: 60px; /* Width of the rectangle */
-            height: 90px; /* Height of the rectangle */
-            border: 2px solid black; /* Black outline */
+            width: 30px; /* Scaled down width */
+            height: 45px; /* Scaled down height */
+            border: 1px solid black; /* Scaled down border thickness */
             margin: 20px auto 0; /* Center horizontally and add margin at the bottom */
             display: flex;
             flex-direction: column;
@@ -81,17 +81,19 @@
         }
 
         .rectangle-text {
-            flex: 0.75; /* Take up available vertical space */
-            display: flex;
-            align-items: center; /* Center vertically */
-            justify-content: center; /* Center horizontally */
-            font-size: 1rem;
+            position: absolute;
+            top: 10%; /* Vertically center the text in the top third */
+            width: 100%; /* Span the width of the rectangle */
+            text-align: center;
+            font-size: 0.5rem; /* Scaled down text size */
             font-weight: bold;
         }
 
         .horizontal-line {
+            position: absolute;
+            top: 33%; /* Place the line one-third of the way down */
             width: 100%; /* Span the width of the rectangle */
-            height: 2px; /* Thickness of the line */
+            height: 1px; /* Scaled down line thickness */
             background-color: black; /* Black line */
         }
 
