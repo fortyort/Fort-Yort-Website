@@ -18,6 +18,13 @@
             font-family: 'Times New Roman', Georgia, serif;
             background-color: #ffffff;
             padding: 20px 20px 40px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            flex: 1; /* Ensures content takes up available vertical space */
         }
 
         /* Box Base Style */
@@ -63,23 +70,29 @@
 
         /* Rectangle Style */
         .rectangle {
-            position: absolute;
-            bottom: 20px; /* 20px from the bottom of the page */
-            left: 50%; /* Center horizontally */
-            transform: translateX(-50%); /* Adjust for true centering */
+            position: relative; /* Relative to itself for text alignment */
             width: 60px; /* Width of the rectangle */
-            height: 120px; /* Height of the rectangle */
+            height: 90px; /* Height of the rectangle */
             border: 2px solid black; /* Black outline */
+            margin: 20px auto 0; /* Center horizontally and add margin at the bottom */
             display: flex;
-            justify-content: center;
-            align-items: flex-start;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .rectangle-split {
+        .rectangle-text {
+            flex: 0.75; /* Take up available vertical space */
+            display: flex;
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .horizontal-line {
             width: 100%; /* Span the width of the rectangle */
             height: 2px; /* Thickness of the line */
             background-color: black; /* Black line */
-            margin-top: 40px; /* Position the line at the top third */
         }
 
         /* Responsive adjustments for smaller screens */
@@ -95,32 +108,35 @@
     </style>
 </head>
 <body>
-    <!-- HOME (Link to the website) -->
-    <a href="https://fortyort.github.io/my-website/" class="box home-box" aria-label="Home">
-        fort yort
-    </a>
+    <main>
+        <!-- HOME (Link to the website) -->
+        <a href="https://fortyort.github.io/my-website/" class="box home-box" aria-label="Home">
+            fort yort
+        </a>
 
-    <!-- Description Paragraph -->
-    <p class="description">
-        Hey there friend,
-        <br><br>
-        Thanks for stopping by this makeshift site to have a look through my cyberspace offerings. I hope you find something you like!
-        <br><br>
-        I mostly make music (sometimes with friends), and I'm currently working on a new cartoon which is yet to be named.
-        <br><br>
-        If you wanna keep up-to-date with my hijinks or get in touch, feel free to add me on any of the "social media" platforms tiled on the homepage, and we can be digi-buds.
-        <br><br>
-        Alternatively, you can drop me a line at 
-        <a href="mailto:mail@fortyort.com" class="email-link">mail@fortyort.com</a> and I'll try to get back to you as soon as I can.
-        <br><br>
-        Take care,
-        <br><br>
-        - Troy O.
-    </p>
+        <!-- Description Paragraph -->
+        <p class="description">
+            Hey there friend,
+            <br><br>
+            Thanks for stopping by this makeshift site to have a look through my cyberspace offerings. I hope you find something you like!
+            <br><br>
+            I mostly make music (sometimes with friends), and I'm currently working on a new cartoon which is yet to be named.
+            <br><br>
+            If you wanna keep up-to-date with my hijinks or get in touch, feel free to add me on any of the "social media" platforms tiled on the homepage, and we can be digi-buds.
+            <br><br>
+            Alternatively, you can drop me a line at 
+            <a href="mailto:mail@fortyort.com" class="email-link">mail@fortyort.com</a> and I'll try to get back to you as soon as I can.
+            <br><br>
+            Take care,
+            <br><br>
+            - Troy O.
+        </p>
+    </main>
 
     <!-- Rectangle with Horizontal Line -->
     <div class="rectangle">
-        <div class="rectangle-split"></div>
+        <div class="rectangle-text">2025</div>
+        <div class="horizontal-line"></div>
     </div>
 </body>
 </html>
