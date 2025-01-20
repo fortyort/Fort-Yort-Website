@@ -61,6 +61,27 @@
             text-decoration: underline; /* Add underline to indicate it's a link */
         }
 
+        /* Rectangle Style */
+        .rectangle {
+            position: absolute;
+            bottom: 20px; /* 20px from the bottom of the page */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Adjust for true centering */
+            width: 60px; /* Width of the rectangle */
+            height: 120px; /* Height of the rectangle */
+            border: 2px solid black; /* Black outline */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .rectangle-split {
+            width: 100%; /* Span the width of the rectangle */
+            height: 2px; /* Thickness of the line */
+            background-color: black; /* Black line */
+            margin-top: 40px; /* Position the line at the top third */
+        }
+
         /* Responsive adjustments for smaller screens */
         @media screen and (max-width: 768px) {
             .box {
@@ -96,5 +117,10 @@
         <br><br>
         - Troy O.
     </p>
+
+    <!-- Rectangle with Horizontal Line -->
+    <div class="rectangle">
+        <div class="rectangle-split"></div>
+    </div>
 </body>
 </html>
