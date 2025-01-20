@@ -55,17 +55,6 @@
             background-color: #999; /* Cartoons box color */
         }
 
-        /* Styling for mobile (screen width 768px or smaller) */
-        @media screen and (max-width: 1100px) {
-            .cartoons-box {
-                height: 25px; /* Remove the margin */
-            }
-            .music-box {
-                margin-bottom: 0px;
-                height: 50px;
-            }
-        }
-
         /* Hover & Focus Effects */
         .box:hover {
             background-color: #000;
@@ -99,6 +88,29 @@
 
         .square-box:hover {
             background-color: #000; /* Slight color change on hover */
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media screen and (max-width: 768px) {
+            .box {
+                padding: 20px 10px; /* Reduce padding */
+                font-size: 1.2rem; /* Reduce font size */
+            }
+
+            .home-box,
+            .music-box,
+            .cartoons-box {
+                height: 60px; /* Set fixed height for these boxes */
+            }
+
+            .squares-container {
+                flex-wrap: wrap; /* Wrap boxes if needed */
+            }
+
+            .square-box {
+                width: 80px; /* Slightly smaller width for square boxes */
+                font-size: 35px; /* Adjust font size for mobile */
+            }
         }
     </style>
 </head>
