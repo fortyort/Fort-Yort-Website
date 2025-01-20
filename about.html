@@ -1,1 +1,80 @@
-test
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About | Fort Yort</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
+
+        body {
+            font-family: 'Times New Roman', Georgia, serif;
+            background-color: #ffffff;
+            padding: 20px 20px 40px;
+        }
+
+        /* Box Base Style */
+        .box {
+            display: flex; /* Use flexbox for centering */
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
+            width: 100%;
+            padding: 50px 20px;
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 2rem;
+            color: white;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            appearance: none;
+        }
+
+        /* Home Box */
+        .home-box {
+            background-color: black;
+            font-size: 1.5rem; /* Smaller font size for Home */
+            padding: 15px 20px; /* Custom padding for Home box */
+        }
+
+        /* Paragraph Style */
+        .description {
+            font-size: 1.1rem;
+            color: #000;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* Responsive adjustments for smaller screens */
+        @media screen and (max-width: 768px) {
+            .box {
+                padding: 20px 10px; /* Reduce padding */
+            }
+
+            .home-box {
+                height: 35px; /* Reduce height for the Home box */
+            }
+            }
+    </style>
+</head>
+<body>
+    <!-- HOME (Link to the website) -->
+    <a href="https://fortyort.github.io/my-website/" class="box home-box" aria-label="Home">
+        fort yort
+    </a>
+
+    <!-- Description Paragraph -->
+    <p class="description">Woops, I haven't added anything here yet.
+        <br><br>
+        Some more text coming soon!
+    </p>
+
+</body>
+</html>
