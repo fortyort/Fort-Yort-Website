@@ -22,7 +22,9 @@
 
         /* Box Base Style */
         .box {
-            display: block;
+            display: flex; /* Use flexbox for centering */
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
             width: 100%;
             padding: 50px 20px;
             margin-bottom: 15px;
@@ -52,17 +54,17 @@
         .cartoons-box {
             background-color: #999; /* Cartoons box color */
         }
-        
+
         /* Styling for mobile (screen width 768px or smaller) */
-@media screen and (max-width: 1100px) {
-  .cartoons-box {
-    height: 25px; /* remove the margin */
-  }
-  .music-box {
-    margin-bottom: 0px; 
-    height: 50px;
-  }
-}
+        @media screen and (max-width: 1100px) {
+            .cartoons-box {
+                height: 25px; /* Remove the margin */
+            }
+            .music-box {
+                margin-bottom: 0px;
+                height: 50px;
+            }
+        }
 
         /* Hover & Focus Effects */
         .box:hover {
@@ -82,13 +84,13 @@
         }
 
         .square-box {
+            display: flex; /* Use flexbox for centering */
+            align-items: center; /* Center vertically */
+            justify-content: center; /* Center horizontally */
             width: 100px; /* Fixed width */
             aspect-ratio: 1 / 1; /* Enforces square proportions */
             background-color: black;
             text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             color: white;
             font-weight: bold;
             font-size: 45px;
@@ -98,7 +100,6 @@
         .square-box:hover {
             background-color: #000; /* Slight color change on hover */
         }
-        
     </style>
 </head>
 <body>
