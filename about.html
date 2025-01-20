@@ -68,35 +68,6 @@
             text-decoration: underline; /* Add underline to indicate it's a link */
         }
 
-        /* Rectangle Style */
-        .rectangle {
-            position: relative; /* Relative to itself for text alignment */
-            width: 30px; /* Scaled down width */
-            height: 45px; /* Scaled down height */
-            border: 1px solid black; /* Scaled down border thickness */
-            margin: 20px auto 0; /* Center horizontally and add margin at the bottom */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .rectangle-text {
-            position: absolute;
-            top: 10%; /* Vertically center the text in the top third */
-            width: 100%; /* Span the width of the rectangle */
-            text-align: center;
-            font-size: 0.5rem; /* Scaled down text size */
-            font-weight: bold;
-        }
-
-        .horizontal-line {
-            position: absolute;
-            top: 33%; /* Place the line one-third of the way down */
-            width: 100%; /* Span the width of the rectangle */
-            height: 1px; /* Scaled down line thickness */
-            background-color: black; /* Black line */
-        }
-
         /* Responsive adjustments for smaller screens */
         @media screen and (max-width: 768px) {
             .box {
@@ -134,11 +105,5 @@
             - Troy O.
         </p>
     </main>
-
-    <!-- Rectangle with Horizontal Line -->
-    <div class="rectangle">
-        <div class="rectangle-text">2025</div>
-        <div class="horizontal-line"></div>
-    </div>
 </body>
 </html>
