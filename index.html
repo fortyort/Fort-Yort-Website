@@ -70,13 +70,15 @@
             justify-content: center; /* Center the squares horizontally */
             gap: 15px; /* Space between boxes */
             margin-top: 15px;
+            flex-wrap: nowrap; /* Prevent wrapping */
         }
 
         .square-box {
             display: flex; /* Use flexbox for centering */
             align-items: center; /* Center vertically */
             justify-content: center; /* Center horizontally */
-            width: 100px; /* Fixed width */
+            flex: 1 1 calc(25% - 15px); /* Ensure they shrink proportionally and stay in a single row */
+            max-width: 100px; /* Maximum size for large screens */
             aspect-ratio: 1 / 1; /* Enforces square proportions */
             background-color: black;
             text-decoration: none;
@@ -94,22 +96,24 @@
         @media screen and (max-width: 768px) {
             .box {
                 padding: 20px 10px; /* Reduce padding */
-                font-size: 1.2rem; /* Reduce font size */
             }
 
-            .home-box,
+            .home-box {
+                height: 35px; /* Reduce height for the Home box */
+            }
+
             .music-box,
             .cartoons-box {
-                height: 60px; /* Set fixed height for these boxes */
+                height: 70px; /* Set fixed height for Music and Cartoons */
             }
 
             .squares-container {
-                flex-wrap: wrap; /* Wrap boxes if needed */
+                gap: 10px; /* Smaller gap between boxes */
             }
 
             .square-box {
-                width: 80px; /* Slightly smaller width for square boxes */
-                font-size: 35px; /* Adjust font size for mobile */
+                flex: 1 1 calc(25% - 10px); /* Maintain proportions while shrinking */
+                max-width: none; /* Allow flexible width to fit smaller screens */
             }
         }
     </style>
