@@ -48,8 +48,17 @@
         .description {
             font-size: 1.1rem;
             color: #000;
-            text-align: center;
+            text-align: left; /* Align paragraph text to the left */
             margin-top: 40px;
+            line-height: 1.6; /* Improve readability with line spacing */
+        }
+
+        /* Email Link Style */
+        .email-link {
+            font-weight: bold; /* Bold text */
+            font-style: italic; /* Italicize text */
+            color: #000;
+            text-decoration: underline; /* Add underline to indicate it's a link */
         }
 
         /* Responsive adjustments for smaller screens */
@@ -61,7 +70,7 @@
             .home-box {
                 height: 35px; /* Reduce height for the Home box */
             }
-            }
+        }
     </style>
 </head>
 <body>
@@ -71,20 +80,21 @@
     </a>
 
     <!-- Description Paragraph -->
-    <p class="description">Hey there friend,
-​<br> <br>
-Thanks for stopping by this makeshift site to have a look through my cyberspace offerings. I hope you find something you like!
-​<br> <br>
-I mostly make music (sometimes with friends), and I'm currently working on a new cartoon which is yet to be named.
- <br> <br>
-If you wanna keep up-to-date with my hijinks or get in touch, feel free to add me on any of the "social media" platforms tiled on the homepage, and we can be digi-buds.
- <br> <br>
-Alternatively, you can drop me a line at mail@fortyort.com and I'll try to get back to you as soon as I can.
-​<br> <br>
-Take care,
-​<br> <br>
-- Troy O.
+    <p class="description">
+        Hey there friend,
+        <br><br>
+        Thanks for stopping by this makeshift site to have a look through my cyberspace offerings. I hope you find something you like!
+        <br><br>
+        I mostly make music (sometimes with friends), and I'm currently working on a new cartoon which is yet to be named.
+        <br><br>
+        If you wanna keep up-to-date with my hijinks or get in touch, feel free to add me on any of the "social media" platforms tiled on the homepage, and we can be digi-buds.
+        <br><br>
+        Alternatively, you can drop me a line at 
+        <a href="mailto:mail@fortyort.com" class="email-link">mail@fortyort.com</a> and I'll try to get back to you as soon as I can.
+        <br><br>
+        Take care,
+        <br><br>
+        - Troy O.
     </p>
-
 </body>
 </html>
