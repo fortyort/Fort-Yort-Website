@@ -110,8 +110,24 @@
             object-fit: cover; /* Ensures the SVG fits perfectly */
         }
 
+        /* TikTok Box */
+        .square-box.tiktok-box {
+            background-color: transparent; /* Transparent background */
+            position: relative; /* For the SVG to fill the box properly */
+            overflow: hidden; /* Ensure SVG doesn't exceed the box */
+        }
+
+        .square-box.tiktok-box img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%; /* Fill the box */
+            height: 100%; /* Maintain aspect ratio while covering */
+            object-fit: cover; /* Ensures the SVG fits perfectly */
+        }
+
         /* Hover Effects */
-        .square-box:hover:not(.youtube-box):not(.instagram-box) {
+        .square-box:hover:not(.youtube-box):not(.instagram-box):not(.tiktok-box) {
             background-color: #000; /* Black background on hover for other boxes */
         }
 
@@ -154,9 +170,9 @@
         <a href="https://youtube.com/@fortyort" target="_blank" class="square-box youtube-box" aria-label="YouTube">
             <img src="youtube-icon.svg" alt="YouTube">
         </a>
-        <!-- TikTok -->
-        <a href="https://www.tiktok.com/@choubat" target="_blank" class="square-box" aria-label="TikTok">
-            T
+        <!-- TikTok Box with SVG -->
+        <a href="https://www.tiktok.com/@choubat" target="_blank" class="square-box tiktok-box" aria-label="TikTok">
+            <img src="tiktok-icon.svg" alt="TikTok">
         </a>  
         <!-- Instagram Box with SVG -->
         <a href="http://www.instagram.com/fortyort" target="_blank" class="square-box instagram-box" aria-label="Instagram">
