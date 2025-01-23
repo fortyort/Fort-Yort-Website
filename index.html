@@ -44,16 +44,6 @@
             padding: 15px 20px; /* Custom padding for Home box */
         }
 
-        /* Music Box */
-        .music-box {
-            background-color: #444; /* Music box color */
-        }
-
-        /* Cartoons Box */
-        .cartoons-box {
-            background-color: #999; /* Cartoons box color */
-        }
-
         /* Squares Container */
         .squares-container {
             display: flex;
@@ -78,40 +68,18 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        /* YouTube Box */
-        .square-box.youtube-box {
-            background-color: transparent; /* Transparent background */
-            position: relative; /* For the SVG to fill the box properly */
-            overflow: hidden; /* Ensure SVG doesn't exceed the box */
+        /* Adjust the font size for the About Box */
+        .square-box.about-box {
+            font-size: 80px; /* Increased size for the question mark */
         }
 
-        .square-box.youtube-box img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%; /* Fill the box */
-            height: 100%; /* Maintain aspect ratio while covering */
-            object-fit: cover; /* Ensures the SVG fits perfectly */
+        .square-box img {
+            width: 60%; /* Scale the image to fit */
+            height: auto;
         }
 
-        /* Instagram Box */
-        .square-box.instagram-box {
-            background-color: transparent; /* Transparent background */
-            position: relative; /* For the SVG to fill the box properly */
-            overflow: hidden; /* Ensure SVG doesn't exceed the box */
-        }
-
-        .square-box.instagram-box img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%; /* Fill the box */
-            height: 100%; /* Maintain aspect ratio while covering */
-            object-fit: cover; /* Ensures the SVG fits perfectly */
-        }
-
-        .square-box:hover:not(.youtube-box):not(.instagram-box) {
-            background-color: #000; /* Black background on hover for other boxes */
+        .square-box:hover {
+            background-color: #000;
         }
 
         /* Responsive Adjustments */
@@ -145,19 +113,19 @@
     <!-- Black Square Boxes -->
     <div class="squares-container">
         <!-- YouTube Box with SVG -->
-        <a href="https://youtube.com/@fortyort" target="_blank" class="square-box youtube-box" aria-label="YouTube">
+        <a href="https://youtube.com/@fortyort" target="_blank" class="square-box" aria-label="YouTube">
             <img src="youtube-icon.svg" alt="YouTube">
         </a>
         <!-- TikTok -->
         <a href="https://www.tiktok.com/@choubat" target="_blank" class="square-box" aria-label="TikTok">
             T
         </a>  
-        <!-- Instagram Box with SVG -->
-        <a href="http://www.instagram.com/fortyort" target="_blank" class="square-box instagram-box" aria-label="Instagram">
-            <img src="Instagram-icon.svg" alt="Instagram">
+        <!-- Instagram -->
+        <a href="http://www.instagram.com/fortyort" target="_blank" class="square-box" aria-label="Instagram">
+            <img src="instagram-icon.svg" alt="Instagram">
         </a>
-        <!-- About -->
-        <a href="about.html" class="square-box" aria-label="About">
+        <!-- About with increased font size for the question mark -->
+        <a href="about.html" class="square-box about-box" aria-label="About">
             ?
         </a>
     </div>
