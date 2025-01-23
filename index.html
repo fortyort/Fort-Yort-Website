@@ -81,21 +81,17 @@
         /* YouTube Box */
         .square-box.youtube-box {
             background-color: transparent; /* Transparent background */
+            position: relative; /* For the SVG to fill the box properly */
+            overflow: hidden; /* Ensure SVG doesn't exceed the box */
         }
 
         .square-box.youtube-box img {
-            width: 80%; /* Ensure the SVG scales properly */
-            height: 80%; /* Maintain proportions */
-            object-fit: contain;
-        }
-
-        .square-box.youtube-box:hover {
-            background-color: transparent; /* No hover effect for YouTube box */
-        }
-
-        .square-box img {
-            width: 60%; /* Default scale for images */
-            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%; /* Fill the box */
+            height: 100%; /* Maintain aspect ratio while covering */
+            object-fit: cover; /* Ensures the SVG fits perfectly */
         }
 
         .square-box:hover:not(.youtube-box) {
