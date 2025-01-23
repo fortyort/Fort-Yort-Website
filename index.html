@@ -40,8 +40,18 @@
         /* Home Box */
         .home-box {
             background-color: black;
-            font-size: 1.5rem;
-            padding: 15px 20px;
+            font-size: 1.5rem; /* Smaller font size for Home */
+            padding: 15px 20px; /* Custom padding for Home box */
+        }
+
+        /* Music Box */
+        .music-box {
+            background-color: #444; /* Music box color */
+        }
+
+        /* Cartoons Box */
+        .cartoons-box {
+            background-color: #999; /* Cartoons box color */
         }
 
         /* Squares Container */
@@ -66,28 +76,30 @@
             font-weight: bold;
             font-size: 45px;
             -webkit-tap-highlight-color: transparent;
-            transition: background-color 0.3s;
         }
 
-        /* Specific Styling for the YouTube Box */
+        /* YouTube Box */
         .square-box.youtube-box {
             background-color: transparent; /* Transparent background */
-            padding: 5px; /* Add padding for better SVG alignment */
         }
 
         .square-box.youtube-box img {
-            width: 100%; /* Make the image fill the entire box */
-            height: 100%; /* Maintain proportions */
-            object-fit: contain; /* Ensure the image scales properly */
-        }
-
-        /* Hover Effects */
-        .square-box:hover:not(.youtube-box) {
-            background-color: #000; /* Black background on hover for non-YouTube boxes */
+            width: 80%; /* Ensure the SVG scales properly */
+            height: 80%; /* Maintain proportions */
+            object-fit: contain;
         }
 
         .square-box.youtube-box:hover {
             background-color: transparent; /* No hover effect for YouTube box */
+        }
+
+        .square-box img {
+            width: 60%; /* Default scale for images */
+            height: auto;
+        }
+
+        .square-box:hover:not(.youtube-box) {
+            background-color: #000; /* Black background on hover for other boxes */
         }
 
         /* Responsive Adjustments */
@@ -120,7 +132,7 @@
 
     <!-- Black Square Boxes -->
     <div class="squares-container">
-        <!-- YouTube Box with Transparent Background -->
+        <!-- YouTube Box with SVG -->
         <a href="https://youtube.com/@fortyort" target="_blank" class="square-box youtube-box" aria-label="YouTube">
             <img src="youtube-icon.svg" alt="YouTube">
         </a>
