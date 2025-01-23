@@ -22,9 +22,9 @@
 
         /* Box Base Style */
         .box {
-            display: flex; /* Use flexbox for centering */
-            align-items: center; /* Center vertically */
-            justify-content: center; /* Center horizontally */
+            display: flex;
+            align-items: center;
+            justify-content: center;
             width: 100%;
             padding: 50px 20px;
             margin-bottom: 15px;
@@ -44,76 +44,47 @@
             padding: 15px 20px; /* Custom padding for Home box */
         }
 
-        /* Music Box */
-        .music-box {
-            background-color: #444; /* Music box color */
-            font-size: 2rem; /* Increased font size */
-        }
-
-        /* Cartoons Box */
-        .cartoons-box {
-            background-color: #999; /* Cartoons box color */
-        }
-
-        /* Hover & Focus Effects */
-        .box:hover {
-            background-color: #000;
-        }
-
-        .box:focus {
-            outline: none;
-        }
-
-        /* New Boxes Container */
+        /* Squares Container */
         .squares-container {
             display: flex;
-            justify-content: center; /* Center the squares horizontally */
-            gap: 15px; /* Space between boxes */
+            justify-content: center;
+            gap: 15px;
             margin-top: 15px;
-            flex-wrap: nowrap; /* Prevent wrapping */
+            flex-wrap: nowrap;
         }
 
         .square-box {
-            display: flex; /* Use flexbox for centering */
-            align-items: center; /* Center vertically */
-            justify-content: center; /* Center horizontally */
-            flex: 1 1 calc(25% - 15px); /* Ensure they shrink proportionally and stay in a single row */
-            max-width: 100px; /* Maximum size for large screens */
-            aspect-ratio: 1 / 1; /* Enforces square proportions */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 1 1 calc(25% - 15px);
+            max-width: 100px;
+            aspect-ratio: 1 / 1;
             background-color: black;
             text-decoration: none;
             color: white;
             font-weight: bold;
             font-size: 45px;
-            -webkit-tap-highlight-color: transparent; /* Prevents grey flash on tap */
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .square-box img {
+            width: 60%; /* Scale the image to fit */
+            height: auto;
         }
 
         .square-box:hover {
-            background-color: #000; /* Slight color change on hover */
+            background-color: #000;
         }
 
-        /* Responsive adjustments for smaller screens */
+        /* Responsive Adjustments */
         @media screen and (max-width: 768px) {
-            .box {
-                padding: 20px 10px; /* Reduce padding */
-            }
-
-            .home-box {
-                height: 35px; /* Reduce height for the Home box */
-            }
-
-            .music-box,
-            .cartoons-box {
-                height: 85px; /* Set fixed height for Music and Cartoons */
-            }
-
             .squares-container {
-                gap: 10px; /* Smaller gap between boxes */
+                gap: 10px;
             }
 
             .square-box {
-                flex: 1 1 calc(25% - 10px); /* Maintain proportions while shrinking */
-                max-width: none; /* Allow flexible width to fit smaller screens */
+                flex: 1 1 calc(25% - 10px);
             }
         }
     </style>
@@ -136,15 +107,19 @@
 
     <!-- Black Square Boxes -->
     <div class="squares-container">
+        <!-- YouTube Box with SVG -->
         <a href="https://youtube.com/@fortyort" target="_blank" class="square-box" aria-label="YouTube">
-            Y
+            <img src="youtube-icon.svg" alt="YouTube">
         </a>
+        <!-- TikTok -->
         <a href="https://www.tiktok.com/@choubat" target="_blank" class="square-box" aria-label="TikTok">
             T
         </a>  
+        <!-- Instagram -->
         <a href="http://www.instagram.com/fortyort" target="_blank" class="square-box" aria-label="Instagram">
             I
         </a>
+        <!-- About -->
         <a href="about.html" class="square-box" aria-label="About">
             ?
         </a>
