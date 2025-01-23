@@ -145,6 +145,31 @@
             .square-box {
                 flex: 1 1 calc(25% - 10px);
             }
+
+            /* Adjust Home, Music, and Cartoons boxes for mobile */
+            .home-box,
+            .music-box,
+            .cartoons-box {
+                padding: 10px 15px; /* Reduce padding for mobile */
+                font-size: 1.2rem; /* Slightly smaller font size */
+            }
+
+            /* Reduce height further on smaller mobile screens */
+            .home-box,
+            .music-box,
+            .cartoons-box {
+                padding: 8px 12px;
+            }
+        }
+
+        /* Very Small Devices */
+        @media screen and (max-width: 480px) {
+            .home-box,
+            .music-box,
+            .cartoons-box {
+                padding: 6px 10px; /* Even more compact for smaller screens */
+                font-size: 1rem; /* Smaller font size */
+            }
         }
     </style>
 </head>
