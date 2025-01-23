@@ -40,8 +40,8 @@
         /* Home Box */
         .home-box {
             background-color: black;
-            font-size: 1.5rem; /* Smaller font size for Home */
-            padding: 15px 20px; /* Custom padding for Home box */
+            font-size: 1.5rem;
+            padding: 15px 20px;
         }
 
         /* Squares Container */
@@ -71,6 +71,11 @@
         .square-box img {
             width: 60%; /* Scale the image to fit */
             height: auto;
+        }
+
+        /* Make YouTube box transparent */
+        .square-box.youtube-box {
+            background-color: transparent; /* Transparent background */
         }
 
         .square-box:hover {
@@ -107,8 +112,8 @@
 
     <!-- Black Square Boxes -->
     <div class="squares-container">
-        <!-- YouTube Box with SVG -->
-        <a href="https://youtube.com/@fortyort" target="_blank" class="square-box" aria-label="YouTube">
+        <!-- YouTube Box with Transparent Background -->
+        <a href="https://youtube.com/@fortyort" target="_blank" class="square-box youtube-box" aria-label="YouTube">
             <img src="youtube-icon.svg" alt="YouTube">
         </a>
         <!-- TikTok -->
