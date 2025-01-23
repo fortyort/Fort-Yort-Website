@@ -94,7 +94,23 @@
             object-fit: cover; /* Ensures the SVG fits perfectly */
         }
 
-        .square-box:hover:not(.youtube-box) {
+        /* Instagram Box */
+        .square-box.instagram-box {
+            background-color: transparent; /* Transparent background */
+            position: relative; /* For the SVG to fill the box properly */
+            overflow: hidden; /* Ensure SVG doesn't exceed the box */
+        }
+
+        .square-box.instagram-box img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%; /* Fill the box */
+            height: 100%; /* Maintain aspect ratio while covering */
+            object-fit: cover; /* Ensures the SVG fits perfectly */
+        }
+
+        .square-box:hover:not(.youtube-box):not(.instagram-box) {
             background-color: #000; /* Black background on hover for other boxes */
         }
 
@@ -136,9 +152,9 @@
         <a href="https://www.tiktok.com/@choubat" target="_blank" class="square-box" aria-label="TikTok">
             T
         </a>  
-        <!-- Instagram -->
-        <a href="http://www.instagram.com/fortyort" target="_blank" class="square-box" aria-label="Instagram">
-            I
+        <!-- Instagram Box with SVG -->
+        <a href="http://www.instagram.com/fortyort" target="_blank" class="square-box instagram-box" aria-label="Instagram">
+            <img src="instagram-icon.svg" alt="Instagram">
         </a>
         <!-- About -->
         <a href="about.html" class="square-box" aria-label="About">
