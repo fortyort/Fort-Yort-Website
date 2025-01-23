@@ -110,8 +110,14 @@
             object-fit: cover; /* Ensures the SVG fits perfectly */
         }
 
+        /* Hover Effects */
         .square-box:hover:not(.youtube-box):not(.instagram-box) {
             background-color: #000; /* Black background on hover for other boxes */
+        }
+
+        /* Increase font size for About Box */
+        .square-box.about-box {
+            font-size: 60px; /* Increase text size for the question mark */
         }
 
         /* Responsive Adjustments */
@@ -157,7 +163,7 @@
             <img src="instagram-icon.svg" alt="Instagram">
         </a>
         <!-- About -->
-        <a href="about.html" class="square-box" aria-label="About">
+        <a href="about.html" class="square-box about-box" aria-label="About">
             ?
         </a>
     </div>
