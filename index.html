@@ -66,20 +66,28 @@
             font-weight: bold;
             font-size: 45px;
             -webkit-tap-highlight-color: transparent;
+            transition: background-color 0.3s;
         }
 
-        .square-box img {
-            width: 60%; /* Scale the image to fit */
-            height: auto;
-        }
-
-        /* Make YouTube box transparent */
+        /* Specific Styling for the YouTube Box */
         .square-box.youtube-box {
             background-color: transparent; /* Transparent background */
+            padding: 5px; /* Add padding for better SVG alignment */
         }
 
-        .square-box:hover {
-            background-color: #000;
+        .square-box.youtube-box img {
+            width: 100%; /* Make the image fill the entire box */
+            height: 100%; /* Maintain proportions */
+            object-fit: contain; /* Ensure the image scales properly */
+        }
+
+        /* Hover Effects */
+        .square-box:hover:not(.youtube-box) {
+            background-color: #000; /* Black background on hover for non-YouTube boxes */
+        }
+
+        .square-box.youtube-box:hover {
+            background-color: transparent; /* No hover effect for YouTube box */
         }
 
         /* Responsive Adjustments */
