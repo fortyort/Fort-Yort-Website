@@ -257,7 +257,7 @@
             // Add click event listeners to "cartoons" and "about" boxes
             document.querySelectorAll('.cartoons-box, .about-box').forEach(box => {
                 box.addEventListener('click', () => {
-                    // Add fade-out effect to all elements except home box
+                    // Apply fade-out to all elements except home box
                     allElements.forEach(element => {
                         if (element !== homeBox) {
                             element.classList.add('fade-out');
