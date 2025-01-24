@@ -36,9 +36,21 @@
             cursor: pointer;
             text-decoration: none;
             appearance: none;
-            opacity: 1; /* Start fully visible */
-            transform: translateY(0); /* Start in normal position */
-            transition: opacity 0.5s ease, transform 0.5s ease; /* Apply smooth transition */
+            opacity: 0; /* Initially hidden */
+            transform: translateY(20px); /* Initial position for smooth animation */
+            animation: fadeIn 1s ease forwards; /* Apply fade-in animation */
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Fade-out effect */
@@ -65,8 +77,9 @@
             background-color: black;
             font-size: 1.5rem;
             padding: 15px 20px;
-            opacity: 1; /* Make sure the home box is fully visible */
+            opacity: 1; /* Ensure the home box is fully visible */
             transform: translateY(0); /* No initial transform */
+            animation: fadeIn 1s ease forwards; /* Default fade-in animation */
         }
 
         /* Music Box */
@@ -101,6 +114,12 @@
             font-weight: bold;
             font-size: 45px;
             -webkit-tap-highlight-color: transparent;
+
+            /* Add fade-in animation */
+            opacity: 0; /* Initially hidden */
+            transform: translateY(20px); /* Initial position */
+            animation: fadeIn 1s ease forwards; /* Apply fade-in animation */
+            animation-delay: .75s; /* Delay before animation starts */
         }
 
         /* YouTube Box */
@@ -218,6 +237,14 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const allElements = document.querySelectorAll('.box, .square-box');
+            const homeBox = document.querySelector('.home-box');
+
+            // Check session storage for navigation origin
+            if (sessionStorage.getItem('fromCartoonsOrAbout') === 'true') {
+                // Skip fade-in animation for home box
+                homeBox.style.animation = 'none'; // Disable animation
+                sessionStorage.removeItem('fromCartoonsOrAbout');
+            }
 
             // Add click event listeners to "cartoons" and "about" boxes
             document.querySelectorAll('.cartoons-box, .about-box').forEach(box => {
@@ -225,9 +252,11 @@
                     // Prevent immediate navigation
                     e.preventDefault();
 
-                    // Apply fade-out to all elements immediately
+                    // Apply fade-out to all elements except home box immediately
                     allElements.forEach(element => {
-                        element.classList.add('fade-out');
+                        if (element !== homeBox) {
+                            element.classList.add('fade-out');
+                        }
                     });
 
                     // Wait for the fade-out transition before navigating
