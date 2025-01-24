@@ -53,19 +53,10 @@
             }
         }
 
-        /* Fade-out animation */
-        @keyframes fadeOut {
-            0% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-            }
-        }
-
-        /* Apply fade-out when triggered */
+        /* Fade-out effect */
         .fade-out {
-            animation: fadeOut 0.5s ease forwards;
+            opacity: 0 !important;
+            transition: opacity 0.5s ease;
         }
 
         /* Staggered Delays */
@@ -86,7 +77,7 @@
             background-color: black;
             font-size: 1.5rem;
             padding: 15px 20px;
-            opacity: 1; /* Ensure the home box is fully visible */
+            opacity: 1; /* Make sure the home box is fully visible */
             transform: translateY(0); /* No initial transform */
             animation: fadeIn 1s ease forwards; /* Default fade-in animation */
         }
@@ -245,33 +236,28 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const allElements = document.querySelectorAll('.box, .square-box');
             const homeBox = document.querySelector('.home-box');
+            const allElements = document.querySelectorAll('.box, .square-box');
 
             // Check session storage for navigation origin
             if (sessionStorage.getItem('fromCartoonsOrAbout') === 'true') {
                 // Skip fade-in animation for home box
-                homeBox.style.animation = 'none'; // Disable animation for home box
+                homeBox.style.animation = 'none'; // Disable animation
+                homeBox.classList.remove('fade-out'); // Ensure it is immediately visible
                 sessionStorage.removeItem('fromCartoonsOrAbout');
             }
 
+            // Restore visibility for all elements and apply fade-in animation for others
+            allElements.forEach(element => {
+                if (element !== homeBox) {
+                    element.classList.remove('fade-out'); // Fade in all elements except home box
+                }
+            });
+
             // Add click event listeners to "cartoons" and "about" boxes
             document.querySelectorAll('.cartoons-box, .about-box').forEach(box => {
-                box.addEventListener('click', (e) => {
-                    // Prevent immediate navigation
-                    e.preventDefault();
-
-                    // Apply fade-out to all elements except home box immediately
-                    allElements.forEach(element => {
-                        if (element !== homeBox) {
-                            element.classList.add('fade-out');
-                        }
-                    });
-
-                    // Wait for the fade-out transition before navigating
-                    setTimeout(() => {
-                        window.location.href = box.getAttribute('href');
-                    }, 500); // Wait 0.5 seconds before navigating
+                box.addEventListener('click', () => {
+                    sessionStorage.setItem('fromCartoonsOrAbout', 'true');
                 });
             });
         });
