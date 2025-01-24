@@ -239,8 +239,14 @@
             // Check session storage for navigation origin
             if (sessionStorage.getItem('fromCartoonsOrAbout') === 'true') {
                 homeBox.style.animation = 'none'; // Skip fade-in animation for home box
-                homeBox.classList.add('fade-out'); // Make sure it is not visible
+                homeBox.classList.add('fade-out'); // Make sure it is not visible initially
                 sessionStorage.removeItem('fromCartoonsOrAbout');
+
+                // Ensure home box fades in after the page has loaded
+                setTimeout(() => {
+                    homeBox.classList.remove('fade-out'); // Remove fade-out class after a delay to allow it to fade in
+                    homeBox.style.animation = 'fadeIn 1s ease forwards'; // Re-apply the fade-in animation
+                }, 10); // Small delay to ensure proper sequence
             }
 
             // Restore visibility for all elements
