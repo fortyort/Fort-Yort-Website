@@ -239,6 +239,7 @@
             // Check session storage for navigation origin
             if (sessionStorage.getItem('fromCartoonsOrAbout') === 'true') {
                 homeBox.style.animation = 'none'; // Skip fade-in animation for home box
+                homeBox.classList.add('fade-out'); // Make sure it is not visible
                 sessionStorage.removeItem('fromCartoonsOrAbout');
             }
 
