@@ -3,6 +3,18 @@
 <head>
     <link rel="icon" href="fy-favicon.svg" type="image/x-icon">
     <link rel="apple-touch-icon" href="fy-favicon.png">
+    
+     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const isIos = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+            if (isIos) {
+                // Change to PNG for iOS devices
+                document.getElementById('favicon').setAttribute('href', 'fy-favicon.png');
+            }
+        });
+    </script>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
