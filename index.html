@@ -256,14 +256,21 @@
 
             // Add click event listeners to "cartoons" and "about" boxes
             document.querySelectorAll('.cartoons-box, .about-box').forEach(box => {
-                box.addEventListener('click', () => {
+                box.addEventListener('click', (e) => {
+                    // Prevent immediate navigation
+                    e.preventDefault();
+
                     // Apply fade-out to all elements except home box
                     allElements.forEach(element => {
                         if (element !== homeBox) {
                             element.classList.add('fade-out');
                         }
                     });
-                    sessionStorage.setItem('fromCartoonsOrAbout', 'true');
+
+                    // Wait for the fade-out transition before navigating
+                    setTimeout(() => {
+                        window.location.href = box.getAttribute('href');
+                    }, 500); // Wait 0.5 seconds before navigating
                 });
             });
         });
