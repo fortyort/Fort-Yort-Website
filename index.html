@@ -36,35 +36,11 @@
             cursor: pointer;
             text-decoration: none;
             appearance: none;
-            opacity: 0; /* Initially hidden */
-            transform: translateY(20px); /* Initial position for smooth animation */
-            animation: fadeIn 1s ease forwards; /* Apply fade-in animation */
+            transition: opacity 0.5s ease;
         }
 
-        /* Fade-in animation */
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Staggered Delays */
-
-        .music-box {
-            animation-delay: 0.25s;
-        }
-
-        .cartoons-box {
-            animation-delay: .5s;
-        }
-
-        .square-box.about-box {
-            font-size: 60px; /* Increase font size for the question mark */
+        .box.hidden {
+            opacity: 0;
         }
 
         /* Home Box */
@@ -91,6 +67,7 @@
             gap: 15px;
             margin-top: 15px;
             flex-wrap: nowrap;
+            transition: opacity 0.5s ease;
         }
 
         .square-box {
@@ -106,65 +83,15 @@
             font-weight: bold;
             font-size: 45px;
             -webkit-tap-highlight-color: transparent;
-
-          /* Add fade-in animation */
-            opacity: 0; /* Initially hidden */
-            transform: translateY(20px); /* Initial position */
-            animation: fadeIn 1s ease forwards; /* Apply fade-in animation */
-            animation-delay: .75s; /* Delay before animation starts */
+            transition: opacity 0.5s ease;
         }
 
-        /* YouTube Box */
-        .square-box.youtube-box {
-            background-color: transparent;
-            position: relative;
-            overflow: hidden;
+        .square-box.hidden {
+            opacity: 0;
         }
 
-        .square-box.youtube-box img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* TikTok Box */
-        .square-box.tiktok-box {
-            background-color: transparent;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .square-box.tiktok-box img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Instagram Box */
-        .square-box.instagram-box {
-            background-color: transparent;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .square-box.instagram-box img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Hover Effects */
-        .square-box:hover:not(.youtube-box):not(.instagram-box):not(.tiktok-box) {
-            background-color: #000;
+        .squares-container.hidden {
+            opacity: 0;
         }
 
         /* Responsive Adjustments */
@@ -208,15 +135,15 @@
 
     <!-- Black Square Boxes -->
     <div class="squares-container">
-        <!-- YouTube Box with SVG -->
+        <!-- YouTube Box -->
         <a href="https://youtube.com/@fortyort" target="_blank" class="square-box youtube-box" aria-label="YouTube">
             <img src="youtube-icon.svg" alt="YouTube">
         </a>
-        <!-- TikTok Box with SVG -->
+        <!-- TikTok Box -->
         <a href="https://www.tiktok.com/@choubat" target="_blank" class="square-box tiktok-box" aria-label="TikTok">
             <img src="tiktok-icon.svg" alt="TikTok">
         </a>  
-        <!-- Instagram Box with SVG -->
+        <!-- Instagram Box -->
         <a href="http://www.instagram.com/fortyort" target="_blank" class="square-box instagram-box" aria-label="Instagram">
             <img src="instagram-icon.svg" alt="Instagram">
         </a>
@@ -225,5 +152,25 @@
             ?
         </a>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cartoonsBox = document.querySelector('.cartoons-box');
+            const aboutBox = document.querySelector('.about-box');
+            const allBoxes = document.querySelectorAll('.box, .square-box');
+            const homeBox = document.querySelector('.home-box');
+
+            function fadeOutAllExceptHome() {
+                allBoxes.forEach(box => {
+                    if (box !== homeBox) {
+                        box.classList.add('hidden');
+                    }
+                });
+            }
+
+            cartoonsBox.addEventListener('click', fadeOutAllExceptHome);
+            aboutBox.addEventListener('click', fadeOutAllExceptHome);
+        });
+    </script>
 </body>
 </html>
