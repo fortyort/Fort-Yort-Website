@@ -60,11 +60,14 @@
             }
         }
 
-        /* Home Box */
+        /* Home Box (no fade-in animation) */
         .home-box {
             background-color: black;
             font-size: 1.5rem; /* Smaller font size for Home */
             padding: 15px 20px; /* Custom padding for Home box */
+            opacity: 1; /* Make sure the home box is visible */
+            transform: translateY(0); /* No initial transform */
+            animation: none; /* Remove animation for the home box */
         }
 
         /* Paragraph Style */
