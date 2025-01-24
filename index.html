@@ -56,7 +56,8 @@
         /* Fade-out effect */
         .fade-out {
             opacity: 0 !important;
-            transform: translateY(20px) !important; /* Optionally move elements slightly down during fade */
+            transform: translateY(20px) !important; /* Move elements down during fade */
+            transition: opacity 0.5s ease, transform 0.5s ease;
         }
 
         /* Staggered Delays */
@@ -242,7 +243,7 @@
             // Check session storage for navigation origin
             if (sessionStorage.getItem('fromCartoonsOrAbout') === 'true') {
                 // Skip fade-in animation for home box
-                homeBox.style.animation = 'none'; // Disable animation
+                homeBox.style.animation = 'none'; // Disable animation for home box
                 sessionStorage.removeItem('fromCartoonsOrAbout');
             }
 
