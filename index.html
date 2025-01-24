@@ -36,23 +36,72 @@
             cursor: pointer;
             text-decoration: none;
             appearance: none;
+            opacity: 0; /* Initially hidden */
+            transform: translateY(20px); /* Initial position for smooth animation */
+            animation: fadeIn 1s ease forwards; /* Apply fade-in animation */
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Staggered Delays */
+        .home-box {
+            animation-delay: 0s;
+        }
+
+        .music-box {
+            animation-delay: 0.5s;
+        }
+
+        .cartoons-box {
+            animation-delay: 1s;
+        }
+
+        .square-box {
+            animation-delay: 1.5s;
+        }
+
+        .square-box.youtube-box {
+            animation-delay: 2s;
+        }
+
+        .square-box.tiktok-box {
+            animation-delay: 2.5s;
+        }
+
+        .square-box.instagram-box {
+            animation-delay: 3s;
+        }
+
+        .square-box.about-box {
+            animation-delay: 3.5s;
+            font-size: 60px; /* Increase font size for the question mark */
         }
 
         /* Home Box */
         .home-box {
             background-color: black;
-            font-size: 1.5rem; /* Smaller font size for Home */
-            padding: 15px 20px; /* Custom padding for Home box */
+            font-size: 1.5rem;
+            padding: 15px 20px;
         }
 
         /* Music Box */
         .music-box {
-            background-color: #444; /* Music box color */
+            background-color: #444;
         }
 
         /* Cartoons Box */
         .cartoons-box {
-            background-color: #999; /* Cartoons box color */
+            background-color: #999;
         }
 
         /* Squares Container */
@@ -81,60 +130,55 @@
 
         /* YouTube Box */
         .square-box.youtube-box {
-            background-color: transparent; /* Transparent background */
-            position: relative; /* For the SVG to fill the box properly */
-            overflow: hidden; /* Ensure SVG doesn't exceed the box */
+            background-color: transparent;
+            position: relative;
+            overflow: hidden;
         }
 
         .square-box.youtube-box img {
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%; /* Fill the box */
-            height: 100%; /* Maintain aspect ratio while covering */
-            object-fit: cover; /* Ensures the SVG fits perfectly */
-        }
-
-        /* Instagram Box */
-        .square-box.instagram-box {
-            background-color: transparent; /* Transparent background */
-            position: relative; /* For the SVG to fill the box properly */
-            overflow: hidden; /* Ensure SVG doesn't exceed the box */
-        }
-
-        .square-box.instagram-box img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%; /* Fill the box */
-            height: 100%; /* Maintain aspect ratio while covering */
-            object-fit: cover; /* Ensures the SVG fits perfectly */
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* TikTok Box */
         .square-box.tiktok-box {
-            background-color: transparent; /* Transparent background */
-            position: relative; /* For the SVG to fill the box properly */
-            overflow: hidden; /* Ensure SVG doesn't exceed the box */
+            background-color: transparent;
+            position: relative;
+            overflow: hidden;
         }
 
         .square-box.tiktok-box img {
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%; /* Fill the box */
-            height: 100%; /* Maintain aspect ratio while covering */
-            object-fit: cover; /* Ensures the SVG fits perfectly */
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Instagram Box */
+        .square-box.instagram-box {
+            background-color: transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .square-box.instagram-box img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* Hover Effects */
         .square-box:hover:not(.youtube-box):not(.instagram-box):not(.tiktok-box) {
-            background-color: #000; /* Black background on hover for other boxes */
-        }
-
-        /* Increase font size for About Box */
-        .square-box.about-box {
-            font-size: 60px; /* Increase text size for the question mark */
+            background-color: #000;
         }
 
         /* Responsive Adjustments */
@@ -150,7 +194,7 @@
             /* Adjust Home, Music, and Cartoons boxes for mobile */
             .music-box,
             .cartoons-box {
-                padding: 20px 10px; /* Reduce padding for mobile */
+                padding: 20px 10px;
             }
 
             /* Reduce height further on smaller mobile screens */
