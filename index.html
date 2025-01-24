@@ -106,6 +106,12 @@
             font-weight: bold;
             font-size: 45px;
             -webkit-tap-highlight-color: transparent;
+
+          /* Add fade-in animation */
+            opacity: 0; /* Initially hidden */
+            transform: translateY(20px); /* Initial position */
+            animation: fadeIn 1s ease forwards; /* Apply fade-in animation */
+            animation-delay: 1s; /* Delay before animation starts */
         }
 
         /* YouTube Box */
