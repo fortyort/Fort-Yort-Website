@@ -45,7 +45,7 @@
             appearance: none;
             opacity: 0; /* Initially hidden */
             transform: translateY(20px); /* Initial position for smooth animation */
-            animation: fadeIn 1s ease forwards; /* Apply fade-in animation */
+            animation: fadeIn 0.5s ease forwards; /* Apply fade-in animation */
         }
         
         /* Fade-in animation */
@@ -77,6 +77,7 @@
             text-align: left; /* Align paragraph text to the left */
             margin-top: 40px;
             line-height: 1.6; /* Improve readability with line spacing */
+            opacity: 0; /* Ensure the paragraph starts hidden */
             animation: fadeIn 0.5s ease forwards; /* Apply fade-in animation */
             animation-delay: 0.25s; /* Add delay to fade-in animation */
         }
@@ -126,6 +127,7 @@
             - Troy O.
         </p>
     </main>
+
  <script>
         document.addEventListener('DOMContentLoaded', () => {
             const homeBox = document.querySelector('.home-box');
