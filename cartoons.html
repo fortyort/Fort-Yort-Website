@@ -53,14 +53,14 @@
             }
         }
 
-        /* Home Box */
+        /* Home Box (no fade-in animation) */
         .home-box {
             background-color: black;
             font-size: 1.5rem; /* Smaller font size for Home */
             padding: 15px 20px; /* Custom padding for Home box */
             opacity: 1; /* Make sure the home box is fully visible */
             transform: translateY(0); /* No initial transform */
-            animation: fadeIn 1s ease forwards; /* Default fade-in animation */
+            animation: none; /* Remove animation for the home box */
         }
 
         /* Paragraph Style */
@@ -81,10 +81,11 @@
             margin: 5px auto;
             text-align: center;
             width: 350px; /* Adjust image width */
-            opacity: 0; /* Ensure the paragraph starts hidden */
+            opacity: 0; /* Ensure the image starts hidden */
             animation: fadeIn 1s ease forwards; /* Apply fade-in animation */
             animation-delay: 0.25s; /* Add delay to fade-in animation */
         }
+        
         /* Responsive adjustments for smaller screens */
         @media screen and (max-width: 768px) {
             .box {
@@ -94,7 +95,7 @@
             .home-box {
                 height: 35px; /* Reduce height for the Home box */
             }
-            }
+        }
     </style>
 </head>
 <body>
