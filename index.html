@@ -234,12 +234,18 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const homeBox = document.querySelector('.home-box');
+            const allElements = document.querySelectorAll('.box, .square-box');
 
             // Check session storage for navigation origin
             if (sessionStorage.getItem('fromCartoonsOrAbout') === 'true') {
-                homeBox.style.animation = 'none'; // Skip fade-in animation
+                homeBox.style.animation = 'none'; // Skip fade-in animation for home box
                 sessionStorage.removeItem('fromCartoonsOrAbout');
             }
+
+            // Restore visibility for all elements
+            allElements.forEach(element => {
+                element.classList.remove('fade-out');
+            });
 
             // Add click event listeners to "cartoons" and "about" boxes
             document.querySelectorAll('.cartoons-box, .about-box').forEach(box => {
