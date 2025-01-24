@@ -43,6 +43,21 @@
             cursor: pointer;
             text-decoration: none;
             appearance: none;
+            opacity: 0; /* Initially hidden */
+            transform: translateY(20px); /* Initial position for smooth animation */
+            animation: fadeIn 0.5s ease forwards; /* Apply fade-in animation */
+        }
+        
+/* Fade-in animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Home Box */
@@ -50,6 +65,9 @@
             background-color: black;
             font-size: 1.5rem; /* Smaller font size for Home */
             padding: 15px 20px; /* Custom padding for Home box */
+            opacity: 1; /* Make sure the home box is fully visible */
+            transform: translateY(0); /* No initial transform */
+            animation: fadeIn 1s ease forwards; /* Default fade-in animation */
         }
 
         /* Paragraph Style */
@@ -59,6 +77,7 @@
             text-align: left; /* Align paragraph text to the left */
             margin-top: 40px;
             line-height: 1.6; /* Improve readability with line spacing */
+            animation-delay: 0.25s;
         }
 
         /* Email Link Style */
@@ -106,5 +125,34 @@
             - Troy O.
         </p>
     </main>
+ <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const homeBox = document.querySelector('.home-box');
+            const allElements = document.querySelectorAll('.box, .square-box');
+
+             // Check session storage for navigation origin
+            if (sessionStorage.getItem('fromCartoonsOrHome') === 'true') {
+                // Skip fade-in animation for home box
+                homeBox.style.animation = 'none'; // Disable animation
+                homeBox.classList.remove('fade-out'); // Ensure it is immediately visible
+                sessionStorage.removeItem('fromCartoonsOrHome');
+            }
+
+            // Restore visibility for all elements and apply fade-in animation for others
+            allElements.forEach(element => {
+                if (element !== homeBox) {
+                    element.classList.remove('fade-out'); // Fade in all elements except home box
+                }
+            });
+
+            // Add click event listeners to "cartoons" and "home" boxes
+            document.querySelectorAll('.cartoons-box, .home-box').forEach(box => {
+                box.addEventListener('click', () => {
+                    sessionStorage.setItem('fromCartoonsOrHome', 'true');
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>
