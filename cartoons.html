@@ -36,6 +36,21 @@
             cursor: pointer;
             text-decoration: none;
             appearance: none;
+            opacity: 0; /* Initially hidden */
+            transform: translateY(20px); /* Initial position for smooth animation */
+            animation: fadeIn 1s ease forwards; /* Apply fade-in animation */
+        }
+
+         /* Fade-in animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Home Box */
@@ -43,6 +58,9 @@
             background-color: black;
             font-size: 1.5rem; /* Smaller font size for Home */
             padding: 15px 20px; /* Custom padding for Home box */
+            opacity: 1; /* Make sure the home box is fully visible */
+            transform: translateY(0); /* No initial transform */
+            animation: fadeIn 1s ease forwards; /* Default fade-in animation */
         }
 
         /* Paragraph Style */
@@ -50,7 +68,11 @@
             font-size: 1.1rem;
             color: #000;
             text-align: center;
-            margin-top: 40px;
+            margin-top: 20px;
+            line-height: 1.6; /* Improve readability with line spacing */
+            opacity: 0; /* Ensure the paragraph starts hidden */
+            animation: fadeIn 1s ease forwards; /* Apply fade-in animation */
+            animation-delay: 0.25s; /* Add delay to fade-in animation */
         }
 
         /* Image Style */
@@ -59,6 +81,9 @@
             margin: 5px auto;
             text-align: center;
             width: 350px; /* Adjust image width */
+            opacity: 0; /* Ensure the paragraph starts hidden */
+            animation: fadeIn 1s ease forwards; /* Apply fade-in animation */
+            animation-delay: 0.25s; /* Add delay to fade-in animation */
         }
         /* Responsive adjustments for smaller screens */
         @media screen and (max-width: 768px) {
@@ -86,5 +111,35 @@
 
     <!-- Waving Hand Animation -->
     <img src="waver.gif" alt="Waving Hand" class="waving-image">
+  
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const homeBox = document.querySelector('.home-box');
+            const allElements = document.querySelectorAll('.box, .square-box');
+
+             // Check session storage for navigation origin
+            if (sessionStorage.getItem('fromAboutOrHome') === 'true') {
+                // Skip fade-in animation for home box
+                homeBox.style.animation = 'none'; // Disable animation
+                homeBox.classList.remove('fade-out'); // Ensure it is immediately visible
+                sessionStorage.removeItem('fromAboutOrHome');
+            }
+
+            // Restore visibility for all elements and apply fade-in animation for others
+            allElements.forEach(element => {
+                if (element !== homeBox) {
+                    element.classList.remove('fade-out'); // Fade in all elements except home box
+                }
+            });
+
+            // Add click event listeners to "about" and "home" boxes
+            document.querySelectorAll('.about-box, .home-box').forEach(box => {
+                box.addEventListener('click', () => {
+                    sessionStorage.setItem('fromAboutOrHome', 'true');
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>
