@@ -53,11 +53,21 @@
             }
         }
 
-        /* Fade-out effect */
+        /* Fade-out animation */
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+        }
+
+        /* Apply fade-out when triggered */
         .fade-out {
-            opacity: 0 !important;
-            transform: translateY(20px) !important; /* Move elements down during fade */
-            transition: opacity 0.5s ease, transform 0.5s ease;
+            animation: fadeOut 0.5s ease forwards;
         }
 
         /* Staggered Delays */
